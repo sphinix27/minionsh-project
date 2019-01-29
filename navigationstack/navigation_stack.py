@@ -16,3 +16,9 @@ class NavigationStack(Action):
 
     def add(self, item):
         self.redo_stack.push(item)
+
+    def can_undo(self):
+        return False
+
+    def can_redo(self):
+        return False
