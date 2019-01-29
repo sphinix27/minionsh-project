@@ -1,5 +1,5 @@
-from navigationstack.stack import Stack
 from navigationstack.action import Action
+from navigationstack.stack import Stack
 
 
 class NavigationStack(Action):

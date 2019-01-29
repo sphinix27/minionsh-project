@@ -1,4 +1,5 @@
 import unittest
+
 from navigationstack.navigation_stack import NavigationStack
 
 

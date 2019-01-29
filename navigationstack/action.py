@@ -1,7 +1,10 @@
 import abc
 
 
-class Action(abc.ABC):
+class Action(object):
+
+    __metaclass__ = abc.ABCMeta
+
     @abc.abstractmethod
     def redo(self):
         pass
