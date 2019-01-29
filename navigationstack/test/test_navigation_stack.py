@@ -11,6 +11,11 @@ class TestNavigationStack(unittest.TestCase):
         self.assertTrue(self.navigation_stack.redo_stack.is_empty())
         self.assertTrue(self.navigation_stack.undo_stack.is_empty())
 
+    def test_navigation_stack_add_items(self):
+        self.navigation_stack.add('item')
+        self.assertFalse(self.navigation_stack.redo_stack.is_empty())
+        self.assertTrue(self.navigation_stack.undo_stack.is_empty())
+
 
 if __name__ == "__main__":
     unittest.main()

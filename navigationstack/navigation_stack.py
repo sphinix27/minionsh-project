@@ -13,3 +13,6 @@ class NavigationStack(Action):
 
     def undo(self):
         pass
+
+    def add(self, item):
+        self.redo_stack.push(item)
