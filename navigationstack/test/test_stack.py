@@ -14,6 +14,13 @@ class StackTest(unittest.TestCase):
         self.stack.push('item')
         self.assertFalse(self.stack.is_empty())
 
+    def test_stack_pop_returns_the_last_item_added(self):
+        expected = 'item'
+        self.stack.push(expected)
+        actual = self.stack.pop()
+        self.assertEqual(expected, actual)
+        self.assertTrue(self.stack.is_empty())
+
 
 if __name__ == "__main__":
     unittest.main()

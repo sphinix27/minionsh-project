@@ -8,3 +8,6 @@ class Stack(object):
 
     def push(self, item):
         self.stack.append(item)
+
+    def pop(self):
+        return self.stack.pop()
