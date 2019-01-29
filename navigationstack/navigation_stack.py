@@ -9,7 +9,9 @@ class NavigationStack(Action):
         self.undo_stack = Stack()
 
     def redo(self):
-        pass
+        if (self.can_redo()):
+            item = self.undo_stack.pop()
+            self.redo_stack.push(item)
 
     def undo(self):
         if (self.can_undo()):

@@ -34,6 +34,18 @@ class TestNavigationStack(unittest.TestCase):
         self.assertFalse(self.navigation_stack.redo_stack.is_empty())
         self.assertFalse(self.navigation_stack.undo_stack.is_empty())
 
+    def test_navigation_stack_redo_when_is_not_empty(self):
+        self.navigation_stack.add('item1')
+        self.navigation_stack.add('item2')
+        self.navigation_stack.add('item3')
+        self.navigation_stack.undo()
+        self.navigation_stack.undo()
+        self.navigation_stack.redo()
+        self.assertTrue(self.navigation_stack.can_undo())
+        self.assertTrue(self.navigation_stack.can_redo())
+        self.assertFalse(self.navigation_stack.redo_stack.is_empty())
+        self.assertFalse(self.navigation_stack.undo_stack.is_empty())
+
 
 if __name__ == "__main__":
     unittest.main()
