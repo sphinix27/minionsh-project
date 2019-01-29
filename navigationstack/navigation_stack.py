@@ -12,7 +12,9 @@ class NavigationStack(Action):
         pass
 
     def undo(self):
-        pass
+        if (self.can_undo()):
+            item = self.redo_stack.pop()
+            self.undo_stack.push(item)
 
     def add(self, item):
         self.redo_stack.push(item)
@@ -21,4 +23,4 @@ class NavigationStack(Action):
         return not self.redo_stack.is_empty()
 
     def can_redo(self):
-        return False
+        return not self.undo_stack.is_empty()
